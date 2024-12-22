@@ -1,0 +1,14 @@
+include:
+- ./immich/compose.yml
+
+services:
+  historian:
+    build: 
+      context: ./historian
+      dockerfile: ./Dockerfile
+    container_name: historian
+    volumes:
+      - ./historian:/app/shared
+    env_file:
+      - .env
+
